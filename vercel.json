@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "name": "moon-pixelmap-api",
+  "builds": [{ "src": "src/*.ts", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/src/index.ts" }]
+}
