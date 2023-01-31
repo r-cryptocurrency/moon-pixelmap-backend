@@ -1,15 +1,11 @@
-import { Low } from "lowdb";
-import { JSONFile } from "lowdb/node";
+import mongoose, { Schema } from "mongoose";
 
-const Blacks = () => {
-  type Data = {
-    blocks: number[];
-  };
+const BlacksSchema = new Schema({
+  blockId: {
+    type: Number
+  }
+})
 
-  const adapter = new JSONFile<Data>("db.json");
-  const db = new Low(adapter);
+const Blacks = mongoose.model('blacks', BlacksSchema)
 
-  return db;
-};
-
-export default Blacks;
+export default Blacks
